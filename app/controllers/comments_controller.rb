@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "admin", password: "password", only: :destroy
 
   # GET /comments
   # GET /comments.json
